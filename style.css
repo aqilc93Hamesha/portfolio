@@ -1,0 +1,284 @@
+/* Reset & Basic Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  scroll-behavior: smooth;
+  background: #5e5a5a; /* Light background for whole website */
+}
+
+/* Header / Hero */
+header {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 50px;
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  max-width: 1200px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  color: #ffffff;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin: 20px 0;
+}
+
+.hero-text .btn {
+  display: inline-block;
+  padding: 10px 25px;
+  background-color: #32c16d;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.hero-text .btn:hover {
+  background-color: #000000;
+}
+
+.hero-image img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%; /* Circle shape */
+  object-fit: cover;
+  border: 5px solid #32c16d; /* Optional border for style */
+}
+
+/* Sections */
+section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+section h2 {
+  margin-bottom: 40px;
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+/* About */
+.about-container {
+  max-width: 800px;
+  margin: auto;
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+/* Skills */
+.skills-container {
+  max-width: 600px;
+  margin: auto;
+  text-align: left;
+}
+
+.skill {
+  margin-bottom: 20px;
+}
+
+.skill p {
+  margin-bottom: 5px;
+}
+
+.progress {
+  background: #ddd;
+  height: 20px;
+  border-radius: 10px;
+}
+
+.progress span {
+  display: block;
+  height: 100%;
+  background:#32c16d;
+  border-radius: 10px;
+}
+
+/* Projects */
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.project-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 300px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+}
+
+.project-card img {
+  width: 100%;
+}
+
+.project-card h3 {
+  margin: 15px 0 10px;
+}
+
+.project-card a {
+  display: inline-block;
+  margin-bottom: 15px;
+  color:#32c16d;
+  text-decoration: none;
+}
+
+/* Contact */
+form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form input, form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  padding: 10px;
+  border: none;
+  background: #32c16d;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+form button:hover {
+  background: #000000;
+}
+
+.socials {
+  margin-top: 20px;
+}
+
+.socials a {
+  margin: 0 10px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #333;
+  color: white;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-image img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .projects-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+/* Animation Keyframes */
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Apply Animations */
+.hero-text {
+  animation: fadeInLeft 1s ease forwards;
+}
+
+.hero-image {
+  animation: fadeInRight 1s ease forwards;
+}
+.hero-text .btn {
+  opacity: 0;
+  animation: fadeInLeft 1s ease 0.8s forwards; /* delay 0.8s */
+}
+.project-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 300px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px) scale(1.05); /* zoom + lift effect */
+  box-shadow: 0 15px 25px rgba(0,0,0,0.2); /* stronger shadow on hover */
+}
+/* About section animation */
+.about-container {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.5s; /* optional delay */
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Initial state for scroll animations */
+.about-container,
+.projects-container {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease-out;
+}
+
+/* When element comes into view */
+.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
